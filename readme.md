@@ -1,9 +1,7 @@
 # API for Yamaha Receiver (RX-A730)
-Stand up a REST service using [Express](https://expressjs.com/) and [NodeJS](https://nodejs.org/en/) (primarily) to interact with a Yamaha RX-A730 Home Theatre Receiver.
+Stand up a REST service using [Express](https://expressjs.com/) and [NodeJS](https://nodejs.org/en/) (primarily) to interact with a Yamaha RX-A730 Home Theater Receiver.
 
-Allows for a local web curl request to process functions against the receiver
-i.e. GET a local webservice to get the current volume of the reciever
-i.e. POST a local webservice to change the volume of the receiver
+Creates local webservie endpoints which process functions agains the Yamaha Receiver. This can be used in conjunction with any front end client you may desire such as Google Home (via IFTT webhooks), Alexa, iOS shortcut, or write an app for your devices.
 
 ## Requires
 * [nodejs](https://nodejs.org/en/download/package-manager/)
@@ -49,3 +47,7 @@ _Get Volume_ by sending `GET` to `/receiver/getVolume`
 * add example curl commands to the `/examples`/ dir
 * move the js files into `/lib/` dir
 * add the IP that the webServer is running on in the [line logging the listening port](https://github.com/cps5155/yamaha-receiver-api/blob/init/webServer.js#L184)
+
+# Tested on 
+Raspi 1st gen (running Wheezy)
+Git bash on Windows
