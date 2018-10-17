@@ -40,7 +40,6 @@ This is what will be wired up to Google Home Webhooks (eventually)
 * use commmand-line-args to parse MAC from CLI like `-MAC=AA:BB:CC:DD:EE:FF`
 * start mock webserver subprocess when localhost is being used
 * add example curl commands to the `/examples`/ dir
-* add the IP that the webServer is running on in the [line logging the listening port](https://github.com/cps5155/yamaha-receiver-api/blob/init/lib/webServer.js#L184)
 
 # Tested on 
 Raspi 1st gen (running Wheezy)
