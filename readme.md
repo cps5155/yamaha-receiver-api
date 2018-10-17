@@ -38,7 +38,6 @@ This is what will be wired up to Google Home Webhooks (eventually)
 # TODO
 * any security, whatsoever
 * create package.json
-* use commmand-line-args to parse MAC from CLI like `-MAC=AA:BB:CC:DD:EE:FF`
 * start mock webserver subprocess when localhost is being used
 * add example curl commands to the `/examples`/ dir
 
