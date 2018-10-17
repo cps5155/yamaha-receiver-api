@@ -3,6 +3,33 @@ Stand up a REST service using [Express](https://expressjs.com/) and [NodeJS](htt
 
 Creates local webservie endpoints which process functions agains the Yamaha Receiver. This can be used in conjunction with any front end client you may desire such as Google Home (via IFTT webhooks), Alexa, iOS shortcut, or write an app for your devices.
 
+# Supports Common usage 
+This is what will be wired up to Google Home Webhooks (eventually)
+* _Volume Up_ by sending `POST` to `/receiver/turnItUp`
+* _Volume Down_ by sending `POST` to `/receiver/turnItDown`
+* _Power On_ by sending `POST` to `/receiver/powerOn`
+* _Power Off_ by sending `POST` to `/receiver/powerOff`
+* _Get Volume_ by sending `GET` to `/receiver/getVolume`
+* _Get Power Status_ by sending `GET` to `/receivergetPowerStatus`
+
+# Examples
+All assuming that the webservice is running 192.168.1.2:6969
+
+* Get the current volume level
+
+>Request: `curl http://192.168.1.1:6969/receiver/getVolume`
+>Response: `Volume is: -350dB`
+
+* Get the current power status
+
+>Request: `curl http://192.168.1.1:6969/receiver/getPowerStatus`
+>Response: `Power Status is: Standby`
+
+* Increase the volume up by 15 DB (1.5 unit on receiver) 
+
+>Request: `curl -X POST http://192.168.1.1:6969/receiver/turnItUp`
+>Response: `Power Status is: Standby`
+
 ## Requires
 * [nodejs](https://nodejs.org/en/download/package-manager/)
 * [command-line-args](https://www.npmjs.com/package/command-line-args)
@@ -28,19 +55,11 @@ If you start the server on a network where the MAC address provided via CLI is n
 
 Logs can be found in `./logs/` directory.
 
-# Supports Common usage 
-This is what will be wired up to Google Home Webhooks (eventually)
-* _Volume Up_ by sending `POST` to `/receiver/turnItUp`
-* _Volume Down_ by sending `POST` to `/receiver/turnItDown`
-* _Power On_ by sending `POST` to `/receiver/powerOn`
-* _Power Off_ by sending `POST` to `/receiver/powerOff`
-* _Get Volume_ by sending `GET` to `/receiver/getVolume`
-* _Get Power Status_ by sending `GET` to `/receivergetPowerStatus`
-
 # TODO
 * any security, whatsoever
 * start mock webserver subprocess when localhost is being used
-* add example curl commands to the `/examples`/ dir
+* add init.d example for auto daemon startup on Raspi
+* add IFTT Google Home & Webhooks recipe example
 
 # Tested on 
 * Raspi 1st gen (running Wheezy)
