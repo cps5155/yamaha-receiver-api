@@ -1,7 +1,0 @@
-<YAMAHA_AV rsp="PUT" RC="0">
-    <System>
-        <Power_Control>
-            <Power></Power>
-        </Power_Control>
-    </System>
-</YAMAHA_AV>
