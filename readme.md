@@ -37,7 +37,6 @@ This is what will be wired up to Google Home Webhooks (eventually)
 
 # TODO
 * any security, whatsoever
-* create package.json
 * start mock webserver subprocess when localhost is being used
 * add example curl commands to the `/examples`/ dir
 
