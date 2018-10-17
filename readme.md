@@ -37,7 +37,8 @@ Logs can be found in `./logs/` directory.
 `Power Off` by sending `POST` to `/receiver/powerOff`
 `Get Volume` by sending `GET` to `/receiver/getVolume`
 
-#TODO
+# TODO
 * any security, whatsoever
 * create package.json
-* use commmand-line-args
+* use commmand-line-args to parse MAC from CLI like `-MAC:AA:BB:CC:DD:EE:FF`
+* start mock webserver subprocess when localhost is being used
