@@ -17,28 +17,35 @@ i.e. POST a local webservice to change the volume of the receiver
 * fs
 
 # Setup
-Install the required pacakges via npm
-Place all the required files in the same folder on the server
+Clone this repo, install the dependencies from package.json, start the webServer.
 
-## If testing locally on a network without the Yamaha receiver, start the mockResponse server
-    node receiver-mockresponse.js&
-## Start the webServices
-    node webServer
+    $ git clone {this repo}
+    $ cd yamaha-receiver-api
+    $ npm install --> this will install the required dependencies listed in package.json (see TODO for now)
+    $ node webServer.js -MAC=AA:BB:CC:DD:EE:FF --> start the webServer and provide it your receiver's MAC address
 
-# Usage
-Starting the webServer will init the yamaha-receiver object. This will attempt to find the MAC address specified  in `yamaha-receiver.js` variable `receiverMAC`(so specify this to your Receiver's MAC). This will take about 10 seconds, so your requests to the service before that is finished will fail. If you are testing on a network without the receiver, it will default to localhost if it can't find the specified MAC.
+If you start the server on a network where the MAC address provided via CLI is not found, it will default to use `localhost:80` as the "target". When you are using localhost as your target, you should be running the `receiver-mockResponse.js` in the background so that the mock responses are sent back to the webServer as if the receiver was on the network. Future enhancement will start the `receiver-mockResponse.js` as a child process of the webserver when localhost is being used (so you don't have to remember to start/stop it manually to test).
 
 Logs can be found in `./logs/` directory.
 
-# Supports Common usage (this is what will be wired up to Google Home Webhooks)
-`Volume Up` by sending `POST` to `/receiver/turnItUp`
-`Volume Down` by sending `POST` to `/receiver/turnItDown`
-`Power On` by sending `POST` to `/receiver/powerOn`
-`Power Off` by sending `POST` to `/receiver/powerOff`
-`Get Volume` by sending `GET` to `/receiver/getVolume`
+# Supports Common usage 
+This is what will be wired up to Google Home Webhooks (eventually)
+
+_Volume Up_ by sending `POST` to `/receiver/turnItUp`
+
+_Volume Down_ by sending `POST` to `/receiver/turnItDown`
+
+_Power On_ by sending `POST` to `/receiver/powerOn`
+
+_Power Off_ by sending `POST` to `/receiver/powerOff`
+
+_Get Volume_ by sending `GET` to `/receiver/getVolume`
 
 # TODO
 * any security, whatsoever
 * create package.json
-* use commmand-line-args to parse MAC from CLI like `-MAC:AA:BB:CC:DD:EE:FF`
+* use commmand-line-args to parse MAC from CLI like `-MAC=AA:BB:CC:DD:EE:FF`
 * start mock webserver subprocess when localhost is being used
+* add example curl commands to the `/examples`/ dir
+* move the js files into `/lib/` dir
+* add the IP that the webServer is running on in the [line logging the listening port](https://github.com/cps5155/yamaha-receiver-api/blob/init/webServer.js#L184)
