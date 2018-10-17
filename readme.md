@@ -33,6 +33,7 @@ This is what will be wired up to Google Home Webhooks (eventually)
 * _Power On_ by sending `POST` to `/receiver/powerOn`
 * _Power Off_ by sending `POST` to `/receiver/powerOff`
 * _Get Volume_ by sending `GET` to `/receiver/getVolume`
+* _Get Power Status_ by sending `GET` to `/receivergetPowerStatus`
 
 # TODO
 * any security, whatsoever
