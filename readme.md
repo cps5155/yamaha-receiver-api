@@ -5,19 +5,21 @@ Creates local webservie endpoints which process functions agains the Yamaha Rece
 
 ## Requires
 * [nodejs](https://nodejs.org/en/download/package-manager/)
+* [command-line-args](https://www.npmjs.com/package/command-line-args)
 * [express](https://www.npmjs.com/package/express)
+* [ip](https://www.npmjs.com/package/ip)
+* [log4js](https://www.npmjs.com/package/log4js)
+* [network-list](https://www.npmjs.com/package/network-list)
 * [request](https://www.npmjs.com/package/request)
 * [request-promise](https://www.npmjs.com/package/request-promise)
-* [log4js](https://www.npmjs.com/package/log4js)
 * [xml-js](https://www.npmjs.com/package/xml-js)
-* [network-list](https://www.npmjs.com/package/network-list)
 * http
 * fs
 
 # Setup
 Clone this repo, install the dependencies from package.json, start the webServer.
 
-    $ git clone {this repo}
+    $ git clone https://github.com/cps5155/yamaha-receiver-api.git
     $ cd yamaha-receiver-api
     $ npm install --> this will install the required dependencies listed in package.json (see TODO for now)
     $ node ./lib/webServer.js -MAC=AA:BB:CC:DD:EE:FF --> start the webServer and provide it your receiver's MAC address
@@ -41,5 +43,6 @@ This is what will be wired up to Google Home Webhooks (eventually)
 * add example curl commands to the `/examples`/ dir
 
 # Tested on 
-Raspi 1st gen (running Wheezy)
-Git bash on Windows
+* Raspi 1st gen (running Wheezy)
+* Git bash on Windows
+* Yamaha RX-A730 Home Theater Receiver
