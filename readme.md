@@ -17,17 +17,17 @@ All assuming that the webservice is running 192.168.1.2:6969
 
 * Get the current volume level
 
->Request: `curl http://192.168.1.1:6969/receiver/getVolume`
+>Request: `curl http://192.168.1.2:6969/receiver/getVolume`
 >Response: `Volume is: -350dB`
 
 * Get the current power status
 
->Request: `curl http://192.168.1.1:6969/receiver/getPowerStatus`
+>Request: `curl http://192.168.1.2:6969/receiver/getPowerStatus`
 >Response: `Power Status is: Standby`
 
 * Increase the volume up by 15 DB (1.5 unit on receiver) 
 
->Request: `curl -X POST http://192.168.1.1:6969/receiver/turnItUp`
+>Request: `curl -X POST http://192.168.1.2:6969/receiver/turnItUp`
 >Response: `Volume adjusted from -350 to -335 successfully.`
 
 ## Requires
