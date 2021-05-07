@@ -1,6 +1,6 @@
 {
   "name": "yamaha-receiver-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stand up a RESTful service using Express and NodeJS (primarily) to interact with a Yamaha Home Theater Receiver.",
   "main": "index.js",
   "directories": {
