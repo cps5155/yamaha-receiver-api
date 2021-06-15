@@ -45,11 +45,30 @@ All assuming that the webservice is running 192.168.1.2:6969
 
 # Setup
 Clone this repo, install the dependencies from package.json, start the webServer.
+```bash
+git clone https://github.com/cps5155/yamaha-receiver-api.git
+```    
 
-    $ git clone https://github.com/cps5155/yamaha-receiver-api.git
-    $ cd yamaha-receiver-api
-    $ npm install --> this will install the required dependencies listed in package.json
-    $ node ./lib/webServer.js -MAC=AA:BB:CC:DD:EE:FF --> start the webServer and provide it your receiver's MAC address
+Traverse into the project folder
+```bash
+cd yamaha-receiver-api
+```
+
+Use npm to install the required libraries 
+```bash
+npm install
+```
+
+Start the webserver using the appropriate syntax & supply it your yamaha-receiver's MAC address. This depends on what you're using to run 
+- For Windows (git bash)
+```bash
+node ./lib/webServer.js -MAC=AA:BB:CC:DD:EE:FF
+``` 
+- For MacOS (zshrc)
+```bash
+node ./lib/webServer.js --MAC=AA:BB:CC:DD:EE:FF
+```
+- For other OS, try a combination of the above or use a lowercase mac address as needed
 
 If you start the server on a network where the MAC address provided via CLI is not found, it will default to use `localhost:80` as the "target". When you are using localhost as your target, you should be running the `receiver-mockResponse.js` in the background so that the mock responses are sent back to the webServer as if the receiver was on the network. Future enhancement will start the `receiver-mockResponse.js` as a child process of the webserver when localhost is being used (so you don't have to remember to start/stop it manually to test).
 
