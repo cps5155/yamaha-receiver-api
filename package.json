@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "command-line-args": "^5.0.2",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "ip": "^1.1.5",
     "log4js": "^6.4.0",
     "network-list": "^1.1.5",
